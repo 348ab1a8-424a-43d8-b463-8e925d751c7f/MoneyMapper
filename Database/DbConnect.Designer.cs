@@ -78,14 +78,14 @@
             this.UsernameTextBox.Location = new System.Drawing.Point(74, 64);
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(220, 20);
-            this.UsernameTextBox.TabIndex = 4;
+            this.UsernameTextBox.TabIndex = 5;
             // 
             // PasswordTextBox
             // 
             this.PasswordTextBox.Location = new System.Drawing.Point(74, 90);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(220, 20);
-            this.PasswordTextBox.TabIndex = 5;
+            this.PasswordTextBox.TabIndex = 6;
             this.PasswordTextBox.UseSystemPasswordChar = true;
             // 
             // ConnectButton
@@ -93,7 +93,7 @@
             this.ConnectButton.Location = new System.Drawing.Point(219, 116);
             this.ConnectButton.Name = "ConnectButton";
             this.ConnectButton.Size = new System.Drawing.Size(75, 23);
-            this.ConnectButton.TabIndex = 6;
+            this.ConnectButton.TabIndex = 8;
             this.ConnectButton.Text = "Connect";
             this.ConnectButton.UseVisualStyleBackColor = true;
             this.ConnectButton.Click += new System.EventHandler(this.ConnectButton_Click);
@@ -103,7 +103,7 @@
             this.DatabaseTextBox.Location = new System.Drawing.Point(74, 38);
             this.DatabaseTextBox.Name = "DatabaseTextBox";
             this.DatabaseTextBox.Size = new System.Drawing.Size(220, 20);
-            this.DatabaseTextBox.TabIndex = 8;
+            this.DatabaseTextBox.TabIndex = 4;
             // 
             // DatabaseLabel
             // 
