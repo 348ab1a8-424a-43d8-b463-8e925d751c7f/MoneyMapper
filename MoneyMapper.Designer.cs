@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.DatabaseGroupBox = new System.Windows.Forms.GroupBox();
+            this.ConnectToDBButton = new System.Windows.Forms.Button();
             this.AccountGroupBox = new System.Windows.Forms.GroupBox();
             this.EntriesGroupBox = new System.Windows.Forms.GroupBox();
-            this.ConnectToDBButton = new System.Windows.Forms.Button();
+            this.CloseConnectionButton = new System.Windows.Forms.Button();
             this.DatabaseGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // DatabaseGroupBox
             // 
+            this.DatabaseGroupBox.Controls.Add(this.CloseConnectionButton);
             this.DatabaseGroupBox.Controls.Add(this.ConnectToDBButton);
             this.DatabaseGroupBox.Location = new System.Drawing.Point(13, 13);
             this.DatabaseGroupBox.Name = "DatabaseGroupBox";
@@ -44,6 +46,16 @@
             this.DatabaseGroupBox.TabIndex = 0;
             this.DatabaseGroupBox.TabStop = false;
             this.DatabaseGroupBox.Text = "Database";
+            // 
+            // ConnectToDBButton
+            // 
+            this.ConnectToDBButton.Location = new System.Drawing.Point(6, 19);
+            this.ConnectToDBButton.Name = "ConnectToDBButton";
+            this.ConnectToDBButton.Size = new System.Drawing.Size(188, 23);
+            this.ConnectToDBButton.TabIndex = 0;
+            this.ConnectToDBButton.Text = "Connect to DB";
+            this.ConnectToDBButton.UseVisualStyleBackColor = true;
+            this.ConnectToDBButton.Click += new System.EventHandler(this.ConnectToDBButton_Click);
             // 
             // AccountGroupBox
             // 
@@ -63,15 +75,15 @@
             this.EntriesGroupBox.TabStop = false;
             this.EntriesGroupBox.Text = "Entries";
             // 
-            // ConnectToDBButton
+            // CloseConnectionButton
             // 
-            this.ConnectToDBButton.Location = new System.Drawing.Point(6, 19);
-            this.ConnectToDBButton.Name = "ConnectToDBButton";
-            this.ConnectToDBButton.Size = new System.Drawing.Size(188, 23);
-            this.ConnectToDBButton.TabIndex = 0;
-            this.ConnectToDBButton.Text = "Connect to DB";
-            this.ConnectToDBButton.UseVisualStyleBackColor = true;
-            this.ConnectToDBButton.Click += new System.EventHandler(this.ConnectToDBButton_Click);
+            this.CloseConnectionButton.Location = new System.Drawing.Point(6, 48);
+            this.CloseConnectionButton.Name = "CloseConnectionButton";
+            this.CloseConnectionButton.Size = new System.Drawing.Size(188, 23);
+            this.CloseConnectionButton.TabIndex = 1;
+            this.CloseConnectionButton.Text = "Close Connection";
+            this.CloseConnectionButton.UseVisualStyleBackColor = true;
+            this.CloseConnectionButton.Click += new System.EventHandler(this.CloseConnectionButton_Click);
             // 
             // MoneyMapper
             // 
@@ -94,6 +106,7 @@
         private System.Windows.Forms.GroupBox AccountGroupBox;
         private System.Windows.Forms.GroupBox EntriesGroupBox;
         private System.Windows.Forms.Button ConnectToDBButton;
+        private System.Windows.Forms.Button CloseConnectionButton;
     }
 }
 

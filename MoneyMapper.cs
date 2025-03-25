@@ -17,6 +17,7 @@ namespace MoneyMapper
         public MoneyMapper()
         {
             InitializeComponent();
+            CloseConnectionButton.Enabled = false;
         }
 
 
@@ -24,6 +25,11 @@ namespace MoneyMapper
         {
             DbConnect dbConnect = new DbConnect();
             dbConnect.ShowDialog();
+        }
+
+        private void CloseConnectionButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -100,6 +100,7 @@
             // 
             // DatabaseTextBox
             // 
+            this.DatabaseTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatabaseTextBox.Location = new System.Drawing.Point(74, 38);
             this.DatabaseTextBox.Name = "DatabaseTextBox";
             this.DatabaseTextBox.Size = new System.Drawing.Size(220, 20);
