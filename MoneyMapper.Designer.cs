@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.DatabaseGroupBox = new System.Windows.Forms.GroupBox();
-            this.ConnectToDBButton = new System.Windows.Forms.Button();
+            this.CloseConnectionButton = new System.Windows.Forms.Button();
+            this.ConnectToDatabaseButton = new System.Windows.Forms.Button();
             this.AccountGroupBox = new System.Windows.Forms.GroupBox();
             this.EntriesGroupBox = new System.Windows.Forms.GroupBox();
-            this.CloseConnectionButton = new System.Windows.Forms.Button();
             this.DatabaseGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // DatabaseGroupBox
             // 
             this.DatabaseGroupBox.Controls.Add(this.CloseConnectionButton);
-            this.DatabaseGroupBox.Controls.Add(this.ConnectToDBButton);
+            this.DatabaseGroupBox.Controls.Add(this.ConnectToDatabaseButton);
             this.DatabaseGroupBox.Location = new System.Drawing.Point(13, 13);
             this.DatabaseGroupBox.Name = "DatabaseGroupBox";
             this.DatabaseGroupBox.Size = new System.Drawing.Size(200, 175);
@@ -47,15 +47,25 @@
             this.DatabaseGroupBox.TabStop = false;
             this.DatabaseGroupBox.Text = "Database";
             // 
-            // ConnectToDBButton
+            // CloseConnectionButton
             // 
-            this.ConnectToDBButton.Location = new System.Drawing.Point(6, 19);
-            this.ConnectToDBButton.Name = "ConnectToDBButton";
-            this.ConnectToDBButton.Size = new System.Drawing.Size(188, 23);
-            this.ConnectToDBButton.TabIndex = 0;
-            this.ConnectToDBButton.Text = "Connect to DB";
-            this.ConnectToDBButton.UseVisualStyleBackColor = true;
-            this.ConnectToDBButton.Click += new System.EventHandler(this.ConnectToDBButton_Click);
+            this.CloseConnectionButton.Location = new System.Drawing.Point(6, 48);
+            this.CloseConnectionButton.Name = "CloseConnectionButton";
+            this.CloseConnectionButton.Size = new System.Drawing.Size(188, 23);
+            this.CloseConnectionButton.TabIndex = 1;
+            this.CloseConnectionButton.Text = "Close Connection";
+            this.CloseConnectionButton.UseVisualStyleBackColor = true;
+            this.CloseConnectionButton.Click += new System.EventHandler(this.CloseConnectionButton_Click);
+            // 
+            // ConnectToDatabaseButton
+            // 
+            this.ConnectToDatabaseButton.Location = new System.Drawing.Point(6, 19);
+            this.ConnectToDatabaseButton.Name = "ConnectToDatabaseButton";
+            this.ConnectToDatabaseButton.Size = new System.Drawing.Size(188, 23);
+            this.ConnectToDatabaseButton.TabIndex = 0;
+            this.ConnectToDatabaseButton.Text = "Connect";
+            this.ConnectToDatabaseButton.UseVisualStyleBackColor = true;
+            this.ConnectToDatabaseButton.Click += new System.EventHandler(this.ConnectToDatabaseButton_Click);
             // 
             // AccountGroupBox
             // 
@@ -74,16 +84,6 @@
             this.EntriesGroupBox.TabIndex = 2;
             this.EntriesGroupBox.TabStop = false;
             this.EntriesGroupBox.Text = "Entries";
-            // 
-            // CloseConnectionButton
-            // 
-            this.CloseConnectionButton.Location = new System.Drawing.Point(6, 48);
-            this.CloseConnectionButton.Name = "CloseConnectionButton";
-            this.CloseConnectionButton.Size = new System.Drawing.Size(188, 23);
-            this.CloseConnectionButton.TabIndex = 1;
-            this.CloseConnectionButton.Text = "Close Connection";
-            this.CloseConnectionButton.UseVisualStyleBackColor = true;
-            this.CloseConnectionButton.Click += new System.EventHandler(this.CloseConnectionButton_Click);
             // 
             // MoneyMapper
             // 
@@ -105,7 +105,7 @@
         private System.Windows.Forms.GroupBox DatabaseGroupBox;
         private System.Windows.Forms.GroupBox AccountGroupBox;
         private System.Windows.Forms.GroupBox EntriesGroupBox;
-        private System.Windows.Forms.Button ConnectToDBButton;
+        private System.Windows.Forms.Button ConnectToDatabaseButton;
         private System.Windows.Forms.Button CloseConnectionButton;
     }
 }

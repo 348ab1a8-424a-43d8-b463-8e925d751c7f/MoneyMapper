@@ -1,6 +1,6 @@
 ﻿namespace MoneyMapper.Database
 {
-    partial class DbConnect
+    partial class DatabaseManager
     {
         /// <summary>
         /// Required designer variable.

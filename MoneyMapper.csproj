@@ -98,11 +98,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\DbConnect.cs">
+    <Compile Include="Database\DatabaseManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Database\DbConnect.Designer.cs">
-      <DependentUpon>DbConnect.cs</DependentUpon>
+    <Compile Include="Database\DatabaseManager.Designer.cs">
+      <DependentUpon>DatabaseManager.cs</DependentUpon>
     </Compile>
     <Compile Include="MoneyMapper.cs">
       <SubType>Form</SubType>
@@ -112,8 +112,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Database\DbConnect.resx">
-      <DependentUpon>DbConnect.cs</DependentUpon>
+    <EmbeddedResource Include="Database\DatabaseManager.resx">
+      <DependentUpon>DatabaseManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MoneyMapper.resx">
       <DependentUpon>MoneyMapper.cs</DependentUpon>

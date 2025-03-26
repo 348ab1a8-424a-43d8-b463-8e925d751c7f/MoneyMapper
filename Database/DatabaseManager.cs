@@ -12,11 +12,16 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace MoneyMapper.Database
 {
-    public partial class DbConnect: Form
+    public partial class DatabaseManager: Form
     {
-        public DbConnect()
+        private MoneyMapper _moneyMapper;
+
+        private MySqlConnection _cnn;
+
+        public DatabaseManager(MoneyMapper moneyMapper)
         {
             InitializeComponent();
+            _moneyMapper = moneyMapper;
         }
 
         private void ConnectButton_Click(object sender, EventArgs e)
@@ -27,11 +32,13 @@ namespace MoneyMapper.Database
 
         public void OpenConnection(string server, string database, string username, string password)
         {
-            string myConnectionString = $"server={server};database={database};uid={username};pwd={password};";
-            MySqlConnection cnn = new MySqlConnection(myConnectionString);
+            string connStr = $"server={server};database={database};uid={username};pwd={password};";
+            _cnn = new MySqlConnection(connStr);
+
             try
             {
-                cnn.Open();
+                _cnn.Open();
+                _moneyMapper.SetClosedConnectionButtonState(true);
                 MessageBox.Show("Connection Success!", "Connected", MessageBoxButtons.OK);
             }
             catch (Exception ex)
@@ -40,9 +47,19 @@ namespace MoneyMapper.Database
             }
         }
 
-        public void CloseConnection()
+        public void CloseConnection(MySqlConnection _cnn)
         {
+            if (_cnn != null && _cnn.State == ConnectionState.Open)
+            {
+                _cnn.Close();
+                _moneyMapper.SetClosedConnectionButtonState(false);
+                MessageBox.Show("Connection Closed.", "Disconnected from Database", MessageBoxButtons.OK);
+            }
+        }
 
+        public MySqlConnection GetConnection()
+        {
+            return _cnn;
         }
     }
 }
