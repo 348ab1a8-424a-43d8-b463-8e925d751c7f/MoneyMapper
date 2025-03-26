@@ -33,11 +33,15 @@
             this.ConnectToDatabaseButton = new System.Windows.Forms.Button();
             this.AccountGroupBox = new System.Windows.Forms.GroupBox();
             this.EntriesGroupBox = new System.Windows.Forms.GroupBox();
+            this.StatusLabel = new System.Windows.Forms.Label();
+            this.ConnectionStateLabel = new System.Windows.Forms.LinkLabel();
             this.DatabaseGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // DatabaseGroupBox
             // 
+            this.DatabaseGroupBox.Controls.Add(this.ConnectionStateLabel);
+            this.DatabaseGroupBox.Controls.Add(this.StatusLabel);
             this.DatabaseGroupBox.Controls.Add(this.CloseConnectionButton);
             this.DatabaseGroupBox.Controls.Add(this.ConnectToDatabaseButton);
             this.DatabaseGroupBox.Location = new System.Drawing.Point(13, 13);
@@ -85,6 +89,26 @@
             this.EntriesGroupBox.TabStop = false;
             this.EntriesGroupBox.Text = "Entries";
             // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Location = new System.Drawing.Point(7, 78);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(40, 13);
+            this.StatusLabel.TabIndex = 2;
+            this.StatusLabel.Text = "Status:";
+            // 
+            // ConnectionStateLabel
+            // 
+            this.ConnectionStateLabel.AutoSize = true;
+            this.ConnectionStateLabel.LinkColor = System.Drawing.Color.Red;
+            this.ConnectionStateLabel.Location = new System.Drawing.Point(54, 78);
+            this.ConnectionStateLabel.Name = "ConnectionStateLabel";
+            this.ConnectionStateLabel.Size = new System.Drawing.Size(73, 13);
+            this.ConnectionStateLabel.TabIndex = 3;
+            this.ConnectionStateLabel.TabStop = true;
+            this.ConnectionStateLabel.Text = "Disconnected";
+            // 
             // MoneyMapper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -96,6 +120,7 @@
             this.Name = "MoneyMapper";
             this.Text = "Money Mapper";
             this.DatabaseGroupBox.ResumeLayout(false);
+            this.DatabaseGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -107,6 +132,8 @@
         private System.Windows.Forms.GroupBox EntriesGroupBox;
         private System.Windows.Forms.Button ConnectToDatabaseButton;
         private System.Windows.Forms.Button CloseConnectionButton;
+        private System.Windows.Forms.LinkLabel ConnectionStateLabel;
+        private System.Windows.Forms.Label StatusLabel;
     }
 }
 

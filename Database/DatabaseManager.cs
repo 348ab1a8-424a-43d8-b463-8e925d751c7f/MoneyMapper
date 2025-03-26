@@ -39,6 +39,7 @@ namespace MoneyMapper.Database
             {
                 _cnn.Open();
                 _moneyMapper.SetClosedConnectionButtonState(true);
+                _moneyMapper.SetConnectionStatusLabelState(true);
                 MessageBox.Show("Connection Success!", "Connected", MessageBoxButtons.OK);
             }
             catch (Exception ex)
@@ -53,6 +54,7 @@ namespace MoneyMapper.Database
             {
                 _cnn.Close();
                 _moneyMapper.SetClosedConnectionButtonState(false);
+                _moneyMapper.SetConnectionStatusLabelState(false);
                 MessageBox.Show("Connection Closed.", "Disconnected from Database", MessageBoxButtons.OK);
             }
         }
@@ -60,6 +62,11 @@ namespace MoneyMapper.Database
         public MySqlConnection GetConnection()
         {
             return _cnn;
+        }
+
+        public bool GetConnectionStatus(MySqlConnection _cnn)
+        {
+            return _cnn != null && _cnn.State == ConnectionState.Open;
         }
     }
 }
