@@ -16,10 +16,33 @@ namespace MoneyMapper
     public partial class MoneyMapper : Form
     {
         private DatabaseManager _db;
+        private Timer connectionStatusTimer;
+
         public MoneyMapper()
         {
             InitializeComponent();
             CloseConnectionButton.Enabled = false;
+        }
+        private void MoneyMapper_Load(object sender, EventArgs e)
+        {
+            connectionStatusTimer = new Timer();
+            connectionStatusTimer.Interval = 1000;
+            connectionStatusTimer.Tick += ConnectionStatusTimer_Tick;
+            connectionStatusTimer.Start();
+        }
+
+        private void ConnectionStatusTimer_Tick(object sender, EventArgs e)
+        {
+            if (_db != null && _db.GetConnectionStatus(_db.GetConnection()))
+            {
+                bool isConnected = _db.GetConnectionStatus(_db.GetConnection());
+                SetConnectionStatusLabelState(isConnected);
+                SetClosedConnectionButtonState(isConnected);
+            }
+            else
+            {
+                // Not connected or _db is null
+            }
         }
 
         private void ConnectToDatabaseButton_Click(object sender, EventArgs e)
@@ -51,6 +74,12 @@ namespace MoneyMapper
                 ConnectionStateLabel.LinkColor = Color.Red;
             }
 
+        }
+
+        private void ConnectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _db = new DatabaseManager(this);
+            _db.ShowDialog();
         }
     }
 }

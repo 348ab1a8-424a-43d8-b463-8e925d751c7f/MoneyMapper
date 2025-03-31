@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.DatabaseGroupBox = new System.Windows.Forms.GroupBox();
+            this.ConnectionStateLabel = new System.Windows.Forms.LinkLabel();
+            this.StatusLabel = new System.Windows.Forms.Label();
             this.CloseConnectionButton = new System.Windows.Forms.Button();
-            this.ConnectToDatabaseButton = new System.Windows.Forms.Button();
             this.AccountGroupBox = new System.Windows.Forms.GroupBox();
             this.EntriesGroupBox = new System.Windows.Forms.GroupBox();
-            this.StatusLabel = new System.Windows.Forms.Label();
-            this.ConnectionStateLabel = new System.Windows.Forms.LinkLabel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ConnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DatabaseGroupBox.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DatabaseGroupBox
@@ -43,60 +46,12 @@
             this.DatabaseGroupBox.Controls.Add(this.ConnectionStateLabel);
             this.DatabaseGroupBox.Controls.Add(this.StatusLabel);
             this.DatabaseGroupBox.Controls.Add(this.CloseConnectionButton);
-            this.DatabaseGroupBox.Controls.Add(this.ConnectToDatabaseButton);
-            this.DatabaseGroupBox.Location = new System.Drawing.Point(13, 13);
+            this.DatabaseGroupBox.Location = new System.Drawing.Point(12, 55);
             this.DatabaseGroupBox.Name = "DatabaseGroupBox";
             this.DatabaseGroupBox.Size = new System.Drawing.Size(200, 175);
             this.DatabaseGroupBox.TabIndex = 0;
             this.DatabaseGroupBox.TabStop = false;
             this.DatabaseGroupBox.Text = "Database";
-            // 
-            // CloseConnectionButton
-            // 
-            this.CloseConnectionButton.Location = new System.Drawing.Point(6, 48);
-            this.CloseConnectionButton.Name = "CloseConnectionButton";
-            this.CloseConnectionButton.Size = new System.Drawing.Size(188, 23);
-            this.CloseConnectionButton.TabIndex = 1;
-            this.CloseConnectionButton.Text = "Close Connection";
-            this.CloseConnectionButton.UseVisualStyleBackColor = true;
-            this.CloseConnectionButton.Click += new System.EventHandler(this.CloseConnectionButton_Click);
-            // 
-            // ConnectToDatabaseButton
-            // 
-            this.ConnectToDatabaseButton.Location = new System.Drawing.Point(6, 19);
-            this.ConnectToDatabaseButton.Name = "ConnectToDatabaseButton";
-            this.ConnectToDatabaseButton.Size = new System.Drawing.Size(188, 23);
-            this.ConnectToDatabaseButton.TabIndex = 0;
-            this.ConnectToDatabaseButton.Text = "Connect";
-            this.ConnectToDatabaseButton.UseVisualStyleBackColor = true;
-            this.ConnectToDatabaseButton.Click += new System.EventHandler(this.ConnectToDatabaseButton_Click);
-            // 
-            // AccountGroupBox
-            // 
-            this.AccountGroupBox.Location = new System.Drawing.Point(13, 195);
-            this.AccountGroupBox.Name = "AccountGroupBox";
-            this.AccountGroupBox.Size = new System.Drawing.Size(200, 267);
-            this.AccountGroupBox.TabIndex = 1;
-            this.AccountGroupBox.TabStop = false;
-            this.AccountGroupBox.Text = "Account";
-            // 
-            // EntriesGroupBox
-            // 
-            this.EntriesGroupBox.Location = new System.Drawing.Point(13, 469);
-            this.EntriesGroupBox.Name = "EntriesGroupBox";
-            this.EntriesGroupBox.Size = new System.Drawing.Size(200, 245);
-            this.EntriesGroupBox.TabIndex = 2;
-            this.EntriesGroupBox.TabStop = false;
-            this.EntriesGroupBox.Text = "Entries";
-            // 
-            // StatusLabel
-            // 
-            this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Location = new System.Drawing.Point(7, 78);
-            this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(40, 13);
-            this.StatusLabel.TabIndex = 2;
-            this.StatusLabel.Text = "Status:";
             // 
             // ConnectionStateLabel
             // 
@@ -109,6 +64,68 @@
             this.ConnectionStateLabel.TabStop = true;
             this.ConnectionStateLabel.Text = "Disconnected";
             // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Location = new System.Drawing.Point(7, 78);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(40, 13);
+            this.StatusLabel.TabIndex = 2;
+            this.StatusLabel.Text = "Status:";
+            // 
+            // CloseConnectionButton
+            // 
+            this.CloseConnectionButton.Location = new System.Drawing.Point(6, 48);
+            this.CloseConnectionButton.Name = "CloseConnectionButton";
+            this.CloseConnectionButton.Size = new System.Drawing.Size(188, 23);
+            this.CloseConnectionButton.TabIndex = 1;
+            this.CloseConnectionButton.Text = "Close Connection";
+            this.CloseConnectionButton.UseVisualStyleBackColor = true;
+            this.CloseConnectionButton.Click += new System.EventHandler(this.CloseConnectionButton_Click);
+            // 
+            // AccountGroupBox
+            // 
+            this.AccountGroupBox.Location = new System.Drawing.Point(12, 237);
+            this.AccountGroupBox.Name = "AccountGroupBox";
+            this.AccountGroupBox.Size = new System.Drawing.Size(200, 267);
+            this.AccountGroupBox.TabIndex = 1;
+            this.AccountGroupBox.TabStop = false;
+            this.AccountGroupBox.Text = "Account";
+            // 
+            // EntriesGroupBox
+            // 
+            this.EntriesGroupBox.Location = new System.Drawing.Point(12, 511);
+            this.EntriesGroupBox.Name = "EntriesGroupBox";
+            this.EntriesGroupBox.Size = new System.Drawing.Size(200, 245);
+            this.EntriesGroupBox.TabIndex = 2;
+            this.EntriesGroupBox.TabStop = false;
+            this.EntriesGroupBox.Text = "Entries";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.databaseToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1580, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // databaseToolStripMenuItem
+            // 
+            this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ConnectToolStripMenuItem});
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.databaseToolStripMenuItem.Text = "Database";
+            // 
+            // ConnectToolStripMenuItem
+            // 
+            this.ConnectToolStripMenuItem.Name = "ConnectToolStripMenuItem";
+            this.ConnectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ConnectToolStripMenuItem.Text = "Connect";
+            this.ConnectToolStripMenuItem.Click += new System.EventHandler(this.ConnectToolStripMenuItem_Click);
+            // 
             // MoneyMapper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,11 +134,16 @@
             this.Controls.Add(this.EntriesGroupBox);
             this.Controls.Add(this.AccountGroupBox);
             this.Controls.Add(this.DatabaseGroupBox);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MoneyMapper";
             this.Text = "Money Mapper";
             this.DatabaseGroupBox.ResumeLayout(false);
             this.DatabaseGroupBox.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -130,10 +152,12 @@
         private System.Windows.Forms.GroupBox DatabaseGroupBox;
         private System.Windows.Forms.GroupBox AccountGroupBox;
         private System.Windows.Forms.GroupBox EntriesGroupBox;
-        private System.Windows.Forms.Button ConnectToDatabaseButton;
         private System.Windows.Forms.Button CloseConnectionButton;
         private System.Windows.Forms.LinkLabel ConnectionStateLabel;
         private System.Windows.Forms.Label StatusLabel;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ConnectToolStripMenuItem;
     }
 }
 

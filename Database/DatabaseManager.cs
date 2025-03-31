@@ -15,7 +15,6 @@ namespace MoneyMapper.Database
     public partial class DatabaseManager: Form
     {
         private MoneyMapper _moneyMapper;
-
         private MySqlConnection _cnn;
 
         public DatabaseManager(MoneyMapper moneyMapper)
