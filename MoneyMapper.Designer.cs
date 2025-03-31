@@ -31,12 +31,12 @@
             this.DatabaseGroupBox = new System.Windows.Forms.GroupBox();
             this.ConnectionStateLabel = new System.Windows.Forms.LinkLabel();
             this.StatusLabel = new System.Windows.Forms.Label();
-            this.CloseConnectionButton = new System.Windows.Forms.Button();
             this.AccountGroupBox = new System.Windows.Forms.GroupBox();
             this.EntriesGroupBox = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DisconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DatabaseGroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +45,6 @@
             // 
             this.DatabaseGroupBox.Controls.Add(this.ConnectionStateLabel);
             this.DatabaseGroupBox.Controls.Add(this.StatusLabel);
-            this.DatabaseGroupBox.Controls.Add(this.CloseConnectionButton);
             this.DatabaseGroupBox.Location = new System.Drawing.Point(12, 55);
             this.DatabaseGroupBox.Name = "DatabaseGroupBox";
             this.DatabaseGroupBox.Size = new System.Drawing.Size(200, 175);
@@ -72,16 +71,6 @@
             this.StatusLabel.Size = new System.Drawing.Size(40, 13);
             this.StatusLabel.TabIndex = 2;
             this.StatusLabel.Text = "Status:";
-            // 
-            // CloseConnectionButton
-            // 
-            this.CloseConnectionButton.Location = new System.Drawing.Point(6, 48);
-            this.CloseConnectionButton.Name = "CloseConnectionButton";
-            this.CloseConnectionButton.Size = new System.Drawing.Size(188, 23);
-            this.CloseConnectionButton.TabIndex = 1;
-            this.CloseConnectionButton.Text = "Close Connection";
-            this.CloseConnectionButton.UseVisualStyleBackColor = true;
-            this.CloseConnectionButton.Click += new System.EventHandler(this.CloseConnectionButton_Click);
             // 
             // AccountGroupBox
             // 
@@ -114,7 +103,8 @@
             // databaseToolStripMenuItem
             // 
             this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ConnectToolStripMenuItem});
+            this.ConnectToolStripMenuItem,
+            this.DisconnectToolStripMenuItem});
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
             this.databaseToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.databaseToolStripMenuItem.Text = "Database";
@@ -122,9 +112,16 @@
             // ConnectToolStripMenuItem
             // 
             this.ConnectToolStripMenuItem.Name = "ConnectToolStripMenuItem";
-            this.ConnectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ConnectToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.ConnectToolStripMenuItem.Text = "Connect";
             this.ConnectToolStripMenuItem.Click += new System.EventHandler(this.ConnectToolStripMenuItem_Click);
+            // 
+            // DisconnectToolStripMenuItem
+            // 
+            this.DisconnectToolStripMenuItem.Name = "DisconnectToolStripMenuItem";
+            this.DisconnectToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.DisconnectToolStripMenuItem.Text = "Disconnect";
+            this.DisconnectToolStripMenuItem.Click += new System.EventHandler(this.DisconnectToolStripMenuItem_Click);
             // 
             // MoneyMapper
             // 
@@ -152,12 +149,12 @@
         private System.Windows.Forms.GroupBox DatabaseGroupBox;
         private System.Windows.Forms.GroupBox AccountGroupBox;
         private System.Windows.Forms.GroupBox EntriesGroupBox;
-        private System.Windows.Forms.Button CloseConnectionButton;
         private System.Windows.Forms.LinkLabel ConnectionStateLabel;
         private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ConnectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DisconnectToolStripMenuItem;
     }
 }
 

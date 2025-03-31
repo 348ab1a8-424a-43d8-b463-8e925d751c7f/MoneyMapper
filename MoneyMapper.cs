@@ -21,7 +21,7 @@ namespace MoneyMapper
         public MoneyMapper()
         {
             InitializeComponent();
-            CloseConnectionButton.Enabled = false;
+            DisconnectToolStripMenuItem.Enabled = false;
         }
         private void MoneyMapper_Load(object sender, EventArgs e)
         {
@@ -45,20 +45,9 @@ namespace MoneyMapper
             }
         }
 
-        private void ConnectToDatabaseButton_Click(object sender, EventArgs e)
-        {
-            _db = new DatabaseManager(this);
-            _db.ShowDialog();
-        }
-
-        private void CloseConnectionButton_Click(object sender, EventArgs e)
-        {
-            _db.CloseConnection(_db.GetConnection());
-        }
-
         public void SetClosedConnectionButtonState(bool enabled)
         {
-            CloseConnectionButton.Enabled = enabled;
+            DisconnectToolStripMenuItem.Enabled = enabled;
         }
 
         public void SetConnectionStatusLabelState(bool enabled)
@@ -80,6 +69,11 @@ namespace MoneyMapper
         {
             _db = new DatabaseManager(this);
             _db.ShowDialog();
+        }
+
+        private void DisconnectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _db.CloseConnection(_db.GetConnection());
         }
     }
 }
